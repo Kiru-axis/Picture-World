@@ -93,3 +93,25 @@ class TestLocation(TestCase):
         self.location.delete_location()
         location = Location.objects.all()
         self.assertTrue(len(location) == 0)
+
+
+# Test Category
+class CategoryTestClass(TestCase):
+    def setUp(self):
+        self.category = Category(name='food')
+        self.category.save_category()
+    # test instance
+    def test_instance(self):
+        self.assertTrue(isinstance(self.category, Category))
+    
+    # save category
+    def test_save_category(self):
+        self.category.save_category()
+        categories = Category.objects.all()
+        self.assertTrue(len(categories) > 0)
+    
+    # delete
+    def test_delete_category(self):
+        self.category.delete_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) == 0)
