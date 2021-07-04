@@ -1,3 +1,5 @@
+import os
+
 """
 Django settings for project project.
 
@@ -63,6 +65,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                # handling image uploads
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -120,6 +124,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+# media_root defines the full path to the profile pics storage directory
+MEDIA_ROOT = os.path.join(BASE_DIR,'media')
+# Public url of the directory
+MEDIA_URL = "/media/"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
