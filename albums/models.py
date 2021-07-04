@@ -39,7 +39,6 @@ class Category(models.Model):
 
 class Image(models.Model):
     name = models.CharField(max_length=60)
-    author = models.CharField(max_length=40, default='admin')
     description = models.TextField()
     date = models.DateTimeField(default = timezone.now)
     image = models.ImageField(upload_to='images/')
