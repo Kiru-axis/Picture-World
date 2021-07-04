@@ -26,6 +26,17 @@ class Location(models.Model):
 class Category(models.Model):
     name = models.CharField(max_length=50)
 
+    # output format
+    def __str__(self):
+        return self.name
+
+    # save category
+    def save_category(self):
+        self.save()
+    # delete category
+    def delete_category(self):
+        self.delete()
+
 class Image(models.Model):
     name = models.CharField(max_length=60)
     author = models.CharField(max_length=40, default='admin')
