@@ -19,6 +19,7 @@
                 <div class="modal-content modalcard">
                     <div class="modal-header">
                         <h5 class="modal-title d-block mx-auto" id="exampleModalLongTitle">{{image.name}}</h5>
+                        
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -26,12 +27,13 @@
                     <div class="modal-body">
                         <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
                         <p>{{image.description}}</p>
+                        <p class="lead">{{image.date}}</p>
                         <span class="btn btn-sm btn-outline-success">{{image.category | title}}</span> <a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{image.location}}</a>
                     </div>
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text"
                                value="{{image.image.url}}" id="{{image.id}}.url">
-                        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
+                        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy Link</button>
                         <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
                         </button>
                     </div>
