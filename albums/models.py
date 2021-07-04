@@ -3,7 +3,7 @@ from django.utils import timezone
 # Create your models here.
 
 class Location(models.Model):
-    name = models.CharField(max_length=60)
+    name = models.CharField(max_length=30)
 
     @classmethod #applicable to the entire class. Not limited to the defined function
     def get_locations(cls):
@@ -24,7 +24,7 @@ class Location(models.Model):
         self.delete()
 
 class Category(models.Model):
-    name = models.CharField(max_length=50)
+    name = models.CharField(max_length=30)
 
     # output format
     def __str__(self):

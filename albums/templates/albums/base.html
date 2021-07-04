@@ -1,139 +1,91 @@
 {% load static %}
 <html lang="en">
-  <head>
+<head>
     <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-144351462-1"
-    ></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-144351462-1"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-      gtag("config", "UA-144351462-1");
-    </script>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-144351462-1');
 
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
     {%if title%}
-    <title>{{title}}</title>
+        <title>{{title}}</title>
     {%else%}
-    <title>Django Blog</title>
-    {%endif%} 
+        <title>Django Blog</title>
+    {%endif%}
     
     {% block styles %}
-    <!--font awesome link -->
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+     <!--font awesome link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <link
-      href="https://fonts.googleapis.com/css?family=Special+Elite|Vollkorn|Yeseva+One&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Special+Elite|Vollkorn|Yeseva+One&display=swap"
+          rel="stylesheet">
     <!-- Bootstrap CSS -->
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <!-- custom css link -->
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
+    
     <script>
-      addEventListener(
-        "load",
-        function () {
-          setTimeout(hideURLbar, 0);
-        },
-        false
-      );
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
 
-      function hideURLbar() {
-        window.scrollTo(0, 1);
-      }
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
     </script>
-  </head>
-  <body>
-    <div class="overlay">
-      <div class="banner text-light">
-        <!-- Navbar -->
-        <header class="site-header">
-          <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-            <div class="container">
-              <a class="navbar-brand mr-4" href="/">Picture World</a>
-              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-              </button>
-              <div class="collapse navbar-collapse" id="navbarToggle">
-                <div class="navbar-nav mr-auto">
-                  <a class="nav-item nav-link" href="{% url 'index'%}">HOME</a>
-                </div>
-                <!-- Navbar Right Side -->
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="#locations">LOCATION</a>
-                    <a class="nav-item nav-link" href="#b">CATEGORIES</a>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </header> 
-        <!-- end navbar -->
+</head>
+<body>
+<div class="overlay">
         <!-- landing page -->
-        <div class="cover p-5">
-          <div class="container image">
-            <form
-              class="form"
-              role="search"
-              action="{% url 'search_results' %}"
-            >
-              <div class="input-group">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="&#xf3ee; Search by category"
-                  name="imagesearch"
-                />
-                <br />
-              </div>
-
-              <small class="text-center my-5"
-                >Trending: Sports, Music</small
-              >
-            </form>
-            <p class="lead text-center mt-5">
-              Exceptional images deserve an exceptional presentation.
-            </p>
-            <div class="text-center mt-3">
-              <a href="#b" class="btn btn-sm btn-outline-primary">View more</a>
+        <div class="banner text-light">
+            {% include "albums/navbar.html" %}
+        <div class="cover  p-5">
+            <div class="container image my-5">
+                <form class="form " role="search" action="{% url 'search_results' %}" >
+    
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="&#xf3ee; Search by category" name="imagesearch" >
+                        <br>
+                        </div>
+    
+                        <small class="text-center ">Trending searches: Memes, Music</small>
+    
+                    </form>
+                <p class="lead text-center mt-5">Exceptional images deserve an exceptional presentation. </p>
+                <div class="text-center mt-3">
+                    <a href="#b" class="btn btn-sm btn-outline-primary ">View more</a>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-      <!-- end landing page -->
-
-      {% block content %} {% endblock %} {% block scripts %}
-      <script
-        src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"
-      ></script>
-      <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"
-      ></script>
-      {% endblock %}
     </div>
-  </body>
+    <!-- end landing page -->
+    
+
+    {% block content %}
+
+    {% endblock %}
+
+    {% block scripts %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    {% endblock %}
+</div>
+</body>
 </html>

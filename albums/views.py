@@ -1,8 +1,9 @@
 from django.shortcuts import render
 from django.http  import HttpResponse,Http404
-from .models import Location,Image
+from .models import Image, Location, Category
 
 # Create your views here.
+# index view
 def index(request):
     context ={
         "images":Image.objects.all(),
@@ -11,19 +12,14 @@ def index(request):
     }
     return render(request, 'albums/index.html',context=context)
 
+
 # view for image location
 def image_location(request, location):
-
-    context = {
-        "images":Image.filter_by_location(location)
-    }
-    
     images = Image.filter_by_location(location)
     print(images)
-    return render(request, 'albums/location.html', context)
+    return render(request, 'albums/location.html', {'location_images': images})
 
 # search results view function
-
 def search_results(request):
     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
         category = request.GET.get("imagesearch")

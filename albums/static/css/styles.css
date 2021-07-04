@@ -1,3 +1,6 @@
+
+/* Added */
+
 html, body{
     font-family: 'Raleway', sans-serif;
     font-size: 100%;
@@ -31,29 +34,24 @@ input.form-control{
     min-height: 400px;
     background-blend-mode: difference;
 }
-
 .cover{
     min-height: 450px;
     width: inherit;
-    background: rgba(0,0,0,0.5)
 }
 
 div.container.top{
     padding-top: 80px;
 }
-
-
 small{
     margin-top: 40px;
     color: #c3c3c3;
 }
 
-
 h2 {
     color:white;
     margin-top:2%;
     font-size:35px;
-    font-family: ' ', cursive;
+    font-family: 'Special Elite', cursive;
 }
 
 .gallery{
@@ -70,20 +68,25 @@ h2 {
     background-blend-mode: difference; 
 }
 
-/* Added */
+/* added */
 h2 {
     color:white;
     margin-top:2%;
     font-size:35px;
-    font-family: ' ', cursive;
+    font-family: 'Special Elite', cursive;
     }
- 
+    .boded{
+    padding-top:2%;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    }
     .overlay{
+    margin:0;
+    padding:0;
     background:url(../images/galaxy_2.jpg),
     radial-gradient(rgb(65, 24, 24), #111),
         url(../images/landing2.jpg) no-repeat 0px 0px;
-    margin:0;
-    padding:0;
     }
     .imagea{
     margin-top:34%;
@@ -93,50 +96,53 @@ h2 {
     a{
     text-decoration:none;
     }
-
-    /* added  */
     .image{
-        margin-bottom:18%;
-        
-        }
-        .modalcard{
-        color:white;
-        padding:3%;
-        border:none;
-        }
-        h3{
-        color:white;
-        }
-        #locations{
-        color:white;
-        }
-        hr{
-        background:white;
-        height:2px;
-        }
-        #imageheader{
-        font-family: 'Yeseva One', cursive;
-        }
-        
-        .imgdesc{
-        font-family: 'Vollkorn', serif;
-        }
-        #foundnon{
-        margin-bottom:3%;
-        }
-        #found{
-        margin-bottom:3%;
-        }
-        #btn{
-        margin-right:6px;
-        }
-        .cat{
-        float:center;
-        
-        padding:4px;
-        border-radius:6px;
-        }
-        #locations{
-            color:white;
-            font-family: 'Special Elite', cursive;
-        }
+    font-family: 'Special Elite', cursive;
+    margin-bottom:18%;
+    
+    }
+    body{
+     scroll-behavior: smooth;
+    background-attachment:fixed;
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size:cover;
+    }
+    
+    .modalcard{
+    background-color:rgba(10,10,10,0.8);
+    color:white;
+    padding:3%;
+    border:none;
+    }
+    h3{
+    color:white;
+    font-family: 'Special Elite', cursive;
+    }
+    #locations{
+    color:white;
+    font-family: 'Special Elite', cursive;
+    }
+    hr{
+    background:white;
+    height:2px;
+    }
+    #imageheader{
+    font-family: 'Yeseva One', cursive;
+    }
+    
+    .imgdesc{
+    font-family: 'Vollkorn', serif;
+    }
+ 
+    #found{
+    margin-bottom:3%;
+    }
+    #btn{
+    margin-right:6px;
+    }
+    .cat{
+    float:center;
+    padding:4px;
+    border-radius:6px;
+    }

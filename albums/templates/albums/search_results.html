@@ -1,23 +1,23 @@
 {% extends 'albums/base.html' %}
+{% load static%}
 {% block content %}
+{{block.super}}
 <div class="container">
 
-<div class="container">
     {% if images %}
     <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
     {% else %}
-    <h2 class="text-center" id="foundnon"> Found no matching images for your search {{message}}</h2>
+    <h2 class="text-center" id="foundnon"> Did not find a match to your  search "{{message}}"</h2>
 
     <a class="d-block mx-auto" href="/">
-        <button class="btn btn-sm btn-outline-primary d-block mx-auto">Abort</button>
+        <button class="btn btn-sm btn-outline-danger d-block mx-auto">Abort</button>
     </a>
     {% endif %}
-</div>
     {% if images %}
-    <div class="card-columns">
+    <div class="card-columns d-flex">
         {% for image in images %}
         <div class="card" data-toggle="modal" data-target="#{{image.id}}">
-            <img src="{{image.image.url}}" alt="{{image.name}}" class="card-img">
+            <img src="{{image.image.url}}" alt="{{image.name}}" width="50" height="200" class="card-img">
         </div>
         <div class="modal fade " id="{{image.id}}" tabindex="-1" role="dialog"
              aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
