@@ -40,11 +40,6 @@
 + **Null response**
 * The searched category does not exist in the database
 
-6. **Adding/Uploding Profile picture**
-* Input:Once logged in on your Account page where your name appears,Click on the choose file button and submit
-* Output:Profile picture successfully updated ir created if for the first time.
-
-
 7. **Note**
 + The site is fully responsive and will work on any device size
 
