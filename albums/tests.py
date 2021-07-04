@@ -32,3 +32,28 @@ class TestImage(TestCase):
         self.image_test.delete_image()
         images = Image.objects.all()
         self.assertTrue(len(images) == 0)
+
+    # update images
+    def test_update_image(self):
+        self.image_test.save_image()
+        self.image_test.update_image(self.image_test.id, 'photos/test.jpg')
+        changed_img = Image.objects.filter(image='photos/test.jpg')
+        self.assertTrue(len(changed_img) > 0)
+    
+    # search images by id
+    def test_get_image_by_id(self):
+        found_image = self.image_test.get_image_by_id(self.image_test.id)
+        image = Image.objects.filter(id=self.image_test.id)
+        self.assertTrue(found_image, image)
+
+    # search images by location
+    def test_search_image_by_location(self):
+        self.image_test.save_image()
+        found_images = self.image_test.filter_by_location(location='Location')
+        self.assertTrue(len(found_images) == 1)
+    
+    # search images by category
+    def test_search_image_by_category(self):
+        category = 'food'
+        found_img = self.image_test.search_by_category(category)
+        self.assertTrue(len(found_img) > 1)
