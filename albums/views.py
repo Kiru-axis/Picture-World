@@ -23,8 +23,8 @@ def image_location(request, location):
     return render(request, 'albums/location.html', context)
 
 # search results view function
-def search_results(request):
 
+def search_results(request):
     if 'imagesearch' in request.GET and request.GET["imagesearch"]:
         category = request.GET.get("imagesearch")
         searched_images = Image.search_by_category(category)

@@ -2,15 +2,17 @@
 {% block content %}
 <div class="container">
 
+<div class="container">
     {% if images %}
     <h2 class="text-center" id="found">Found {{ images|length }} images in '{{message}}' category</h2>
     {% else %}
-    <h2 class="text-center" id="foundnon"> Found 0 images for your search {{message}}</h2>
+    <h2 class="text-center" id="foundnon"> Found no matching images for your search {{message}}</h2>
 
     <a class="d-block mx-auto" href="/">
         <button class="btn btn-sm btn-info d-block mx-auto">Back Home</button>
     </a>
     {% endif %}
+</div>
     {% if images %}
     <div class="card-columns">
         {% for image in images %}
@@ -30,13 +32,12 @@
                     <div class="modal-body">
                         <img src="{{image.image.url}}" alt="{{image.name}}" class="img-fluid">
                         <p>{{image.description}}</p>
-                        <p class="lead">{{image.date}}</p>
                         <span class="btn btn-sm btn-outline-success">{{image.category | title}}</span> <a href="/location/{{image.location}}" class="btn btn-sm btn-outline-info">{{image.location}}</a>
                     </div>
                     <div class="modal-footer">
                         <input class="form-control input-lg" type="text"
                                value="{{image.image.url}}" id="{{image.id}}.url">
-                        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy Link</button>
+                        <button class="btn btn-success btn-sm" onclick="copyLink('{{image.id}}.url')">Copy</button>
                         <button type="button" class="btn btn-outline-danger btn-sm" data-dismiss="modal">Close
                         </button>
                     </div>

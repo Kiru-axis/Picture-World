@@ -53,7 +53,7 @@ h2 {
     color:white;
     margin-top:2%;
     font-size:35px;
-    font-family: 'Special Elite', cursive;
+    font-family: ' ', cursive;
 }
 
 .gallery{
@@ -69,3 +69,70 @@ h2 {
     min-height: 400px;
     background-blend-mode: difference; 
 }
+
+/* Added */
+h2 {
+    color:white;
+    margin-top:2%;
+    font-size:35px;
+    font-family: ' ', cursive;
+    }
+ 
+    .overlay{
+    background:url(../images/galaxy_2.jpg),
+    radial-gradient(rgb(65, 24, 24), #111),
+        url(../images/landing2.jpg) no-repeat 0px 0px;
+    margin:0;
+    padding:0;
+    }
+    .imagea{
+    margin-top:34%;
+    font-size:45px;
+    font-weight:bolder;
+    }
+    a{
+    text-decoration:none;
+    }
+
+    /* added  */
+    .image{
+        margin-bottom:18%;
+        
+        }
+        .modalcard{
+        color:white;
+        padding:3%;
+        border:none;
+        }
+        h3{
+        color:white;
+        }
+        #locations{
+        color:white;
+        }
+        hr{
+        background:white;
+        height:2px;
+        }
+        #imageheader{
+        font-family: 'Yeseva One', cursive;
+        }
+        
+        .imgdesc{
+        font-family: 'Vollkorn', serif;
+        }
+        #foundnon{
+        margin-bottom:3%;
+        }
+        #found{
+        margin-bottom:3%;
+        }
+        #btn{
+        margin-right:6px;
+        }
+        .cat{
+        float:center;
+        
+        padding:4px;
+        border-radius:6px;
+        }
