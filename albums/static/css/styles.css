@@ -41,7 +41,31 @@ input.form-control{
 div.container.top{
     padding-top: 80px;
 }
+
+
 small{
     margin-top: 40px;
     color: #c3c3c3;
+}
+
+
+h2 {
+    color:white;
+    margin-top:2%;
+    font-size:35px;
+    font-family: 'Special Elite', cursive;
+}
+
+.gallery{
+    background:url(../images/galaxy_2.jpg),
+    radial-gradient(rgb(65, 24, 24), #111),
+        url(../images/landing2.jpg) no-repeat 0px 0px;
+    background-size:cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 400px;
+    background-blend-mode: difference; 
 }
