@@ -11,4 +11,8 @@ class TestImage(TestCase):
         self.category.save_category()
 
         self.image_test = Image(id=1, name='image', description='test image', location=self.location,category=self.category)
-    
+    # Tear down after each test
+    def tearDown(self):
+        Image.objects.all().delete()
+        Location.objects.all().delete()
+        Category.objects.all().delete()
