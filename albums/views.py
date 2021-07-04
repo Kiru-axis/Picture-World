@@ -10,3 +10,14 @@ def index(request):
         "title": "Picture World"
     }
     return render(request, 'albums/index.html',context=context)
+
+# view for image location
+def image_location(request, location):
+
+    context = {
+        "images":Image.filter_by_location(location)
+    }
+    
+    images = Image.filter_by_location(location)
+    print(images)
+    return render(request, 'albums/location.html', context)
