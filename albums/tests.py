@@ -57,3 +57,39 @@ class TestImage(TestCase):
         category = 'food'
         found_img = self.image_test.search_by_category(category)
         self.assertTrue(len(found_img) > 1)
+
+
+# Test Location
+class TestLocation(TestCase):
+    def setUp(self):
+        self.location = Location(name='Location')
+        self.location.save_location()
+    
+    # test instance of the location model
+    def test_instance(self):
+        self.assertTrue(isinstance(self.location, Location))
+    
+    # save location
+    def test_save_location(self):
+        self.location.save_location()
+        locations = Location.get_locations()
+        self.assertTrue(len(locations) > 0)
+
+    # get location
+    def test_get_locations(self):
+        self.location.save_location()
+        locations = Location.get_locations()
+        self.assertTrue(len(locations) > 1)
+    
+    # update location
+    def test_update_location(self):
+        new_location = 'new_Location'
+        self.location.update_location(self.location.id, new_location)
+        changed_location = Location.objects.filter(name='new_Location')
+        self.assertTrue(len(changed_location) > 0)
+
+    # delete location
+    def test_delete_location(self):
+        self.location.delete_location()
+        location = Location.objects.all()
+        self.assertTrue(len(location) == 0)
