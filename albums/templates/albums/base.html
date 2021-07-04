@@ -22,7 +22,9 @@
     <title>{{title}}</title>
     {%else%}
     <title>Django Blog</title>
-    {%endif%} {% block styles %}
+    {%endif%} 
+    
+    {% block styles %}
     <!--font awesome link -->
     <link
       rel="stylesheet"
@@ -41,9 +43,8 @@
       crossorigin="anonymous"
     />
     <!-- custom css link -->
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
     {% endblock %}
-
     <script>
       addEventListener(
         "load",

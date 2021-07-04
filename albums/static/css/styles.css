@@ -1,0 +1,33 @@
+html, body{
+    font-family: 'Raleway', sans-serif;
+    font-size: 100%;
+
+}
+
+form.form{
+    width: 70%;
+    border-radius: 0px;
+    height: 50px;
+    margin: 0 auto;
+}
+
+input.form-control{
+    width: 70%;
+    border-radius: 0px;
+    height: 40px;
+    font-family: 'Font Awesome 5 Brands' !important;
+}
+
+.banner {
+    background:url(../images/galaxy.jpg),
+    radial-gradient(#444, #111),
+        url(../images/landing2.jpg) no-repeat 0px 0px;
+    background-size:cover;
+    background-position: center;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    -moz-background-size: cover;
+    min-height: 400px;
+    background-blend-mode: difference;
+}
